@@ -10,8 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('images/MEGACITY CABS (2).png') no-repeat center center fixed;
-            background-size: cover;
+            background: linear-gradient(to right, #141E30, #243B55); /* Gradient background */
             color: white;
         }
 
@@ -38,7 +37,7 @@
         .hero {
             text-align: center;
             padding: 100px 20px;
-            background: rgba(0, 0, 0, 0.5);
+            background-color: #1e2a3a; /* Solid background color */
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
             margin: 50px auto;
             border-radius: 10px;
@@ -86,17 +85,17 @@
 
 <!-- Navbar -->
 <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">About Us</a>
-    <a href="help.jsp">Help & Support</a> 
-    <a href="#">Contact</a>
+    <a href="index.jsp">Home</a>
+    <a href="AboutUs.jsp">About Us</a>
+    <a href="HelpandSupport.jsp">Help & Support</a>
+    <a href="Contact.jsp">Contact</a>
 </div>
 
 <!-- Hero Section -->
 <div class="hero">
     <h1>Welcome to Mega City Cab Service</h1>
     <p>Experience the Difference in Every Ride</p>
-    <a href="login.jsp" class="btn">Get Start</a>
+    <a href="login.jsp" class="btn">Get Started</a>
 </div>
 
 <!-- Footer -->

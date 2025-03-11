@@ -9,12 +9,7 @@
 <head>
   <title>Customer Dashboard - Book a Car</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to right, #000428, #004e92);
-      color: white;
-      margin: 20px;
-    }
+    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f5f5f5; }
     .header {
       display: flex;
       justify-content: space-between;
@@ -23,36 +18,37 @@
       background-color: #007BFF;
       color: white;
     }
-    .header h2 {
-      margin: 0;
-    }
+    .header h2 { margin: 0; }
     .logout-button {
       padding: 8px 15px;
       background-color: #dc3545;
       color: white;
       border: none;
       cursor: pointer;
+      transition: 0.3s;
     }
     .logout-button:hover {
       background-color: #c82333;
+      transform: scale(1.05);
     }
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 20px;
-      background-color: rgba(0, 0, 0, 0.7); /* Darker background for better visibility */
     }
     th, td {
-      padding: 10px;
+      padding: 12px;
       border: 1px solid #ddd;
       text-align: center;
+      font-size: 14px;
     }
     th {
-      background-color: #333; /* Darker background for headers */
-      color: white; /* White text for headers */
+      background-color: #343a40;
+      color: white;
     }
     td {
-      background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent background for rows */
+      background-color: #ffffff;
+      color: #333;
     }
     .book-button {
       padding: 8px 15px;
@@ -60,9 +56,11 @@
       color: white;
       border: none;
       cursor: pointer;
+      transition: 0.3s;
     }
     .book-button:hover {
       background-color: #218838;
+      transform: scale(1.05);
     }
     .cancel-button {
       padding: 8px 15px;
@@ -70,19 +68,29 @@
       color: white;
       border: none;
       cursor: pointer;
+      transition: 0.3s;
     }
     .cancel-button:hover {
       background-color: #c82333;
+      transform: scale(1.05);
     }
     .pay-button {
+      padding: 8px 15px;
       background-color: #007BFF;
       color: white;
-      padding: 8px;
       border: none;
       cursor: pointer;
+      transition: 0.3s;
     }
     .pay-button:hover {
       background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    /* No cars available message */
+    p {
+      color: red;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -99,13 +107,10 @@
         response.sendRedirect("login.jsp");
       }
     %>
-  </h2>
-  <form action="logout" method="POST">
-    <button type="submit" class="logout-button">Logout</button>
-  </form>
+  
 </div>
 
-<!-- ✅ Available Cars -->
+<!-- Available Cars -->
 <h2>Available Cars for Booking</h2>
 
 <%
@@ -144,9 +149,10 @@
   </tbody>
 </table>
 <% } else { %>
-<p style="text-align: center; color: red;">No available cars at the moment.</p>
+<p>No available cars at the moment.</p>
 <% } %>
 
+<!-- My Bookings -->
 <h2>My Bookings</h2>
 
 <%
@@ -221,7 +227,7 @@
   </tbody>
 </table>
 <% } else { %>
-<p style="text-align: center; color: red;">No bookings found.</p>
+<p>No bookings found.</p>
 <% } %>
 
 </body>
